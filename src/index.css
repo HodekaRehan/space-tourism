@@ -1,13 +1,355 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* fonts */
+  --ff-barlow: "Barlow", sans-serif;
+  --ff-barlow-condensed: "Barlow Condensed", sans-serif;
+  --ff-bellefair: "Bellefair", serif;
+  /* colors */
+  --clr-black: 230 35% 7%;
+  --clr-grey: 231 77% 90%;
+  --clr-white: 0 0% 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-barlow);
+  background: hsl(var(--clr-black));
+  color: hsl(var(--clr-white));
+  line-height: 1.5;
+  font-size: 0.875rem;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 2.5rem;
+  margin: 1.5rem;
+}
+
+main {
+  min-height: 100vh;
+  padding-top: 5.5rem;
+}
+
+/* navbar */
+.nav-menu {
+  display: flex;
+  background-color: hsl(var(--clr-white) / 0.05);
+  backdrop-filter: blur(1.5rem);
+  padding: 0 3rem;
+}
+
+.nav-menu li:not(:last-child) {
+  margin-right: 2.25rem;
+}
+
+.nav-link {
+  color: hsl(var(--clr-white));
+  font-family: var(--ff-barlow-condensed);
+  text-transform: uppercase;
+  position: relative;
+
+  padding: 2.4rem 0.25rem;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(var(--clr-white));
+  width: 100%;
+  height: 3px;
+  display: block;
+}
+
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(var(--clr-white) / 0.5);
+  width: 100%;
+  height: 3px;
+  display: block;
+}
+
+/* .active {
+  color: hsl(var(--clr-grey));
+} */
+
+/* Home Page */
+.home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.home-container {
+  display: flex;
+}
+
+.home-heading {
+  font-family: var(--ff-barlow-condensed);
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: hsl(var(--clr-grey));
+  font-size: 1rem;
+}
+
+.space {
+  font-family: var(--ff-bellefair);
+  font-size: 5rem;
+  color: hsl(var(--clr-white));
+}
+
+.home-text-container p {
+  line-height: 25px;
+  color: hsl(var(--clr-grey));
+  font-size: 0.9375rem;
+}
+
+/* Notfound page */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.error-page h1 {
+  font-size: 2.5rem;
+}
+
+.error {
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+    flex-direction: column;
+    transform: translateX(100%);
+    padding: 7rem 0 0 2rem;
+    transition: transform 500ms ease-in-out;
+  }
+
+  .nav-toggle {
+    position: fixed;
+    right: 1.5rem;
+    top: 2rem;
+    background-color: transparent;
+    background-image: url(./assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .nav-menu.expanded {
+    transform: translateX(0);
+  }
+
+  .nav-toggle.close {
+    background-image: url(./assets/shared/icon-close.svg);
+  }
+
+  .nav-menu li {
+    padding: 0.375rem 0;
+    margin-bottom: 0.4rem;
+    z-index: 10;
+  }
+
+  .nav-menu li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+    padding: 0.375rem 0;
+    display: block;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: hsl(var(--clr-white));
+    width: 4px;
+    height: 100%;
+    display: block;
+  }
+
+  .nav-link:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: hsl(var(--clr-white) / 0.5);
+    width: 4px;
+    height: 100%;
+    display: block;
+  }
+
+  .nav-num {
+    font-weight: bold;
+    margin-right: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    background-image: url(./assets/home/background-home-mobile.jpg);
+  }
+
+  /* .large-btn {
+    position: relative;
+    z-index: 1;
+    font-size: 1.25rem;
+    letter-spacing: 1.25px;
+    background-color: hsl(var(--clr-white));
+    font-family: var(--ff-bellefair);
+    text-transform: uppercase;
+    color: hsl(var(--clr-black));
+    width: 150px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .large-btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--clr-white) / 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+  }
+
+  .large-btn:hover::after,
+  .large-btn:focus::after {
+    opacity: 1;
+    transform: scale(1.5);
+  } */
+}
+
+@media only screen and (min-width: 768px) {
+  .home {
+    background-image: url(./assets/home/background-home-tablet.jpg);
+    background-position: center center;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .logo {
+    max-width: 3rem;
+    margin: 1.5rem 2.5rem;
+  }
+
+  .nav-menu {
+    height: 6rem;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+  .nav-num {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    letter-spacing: 2.36px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .home {
+    background-image: url(./assets/home/background-home-desktop.jpg);
+    background-position: center center;
+  }
+
+  header {
+    margin-top: 2.5rem;
+  }
+
+  .logo {
+    margin-left: 3.5rem;
+  }
+
+  .nav-menu {
+    padding: 0 5rem 0 3.75rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+  }
+
+  .nav-num {
+    font-weight: bold;
+    margin-right: 0.75rem;
+  }
+
+  main {
+    padding-top: 8.5rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .nav-menu {
+    padding: 0 10rem 0 7.5rem;
+  }
+
+  .logo {
+    margin-left: 7rem;
+  }
 }
