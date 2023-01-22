@@ -1,0 +1,234 @@
+@use '../abstracts' as a;
+
+header{
+   @include a.breakpoint-up(medium){
+      position: relative;
+   }
+
+   @include a.breakpoint-up(large){
+      top: 4rem;
+   }
+
+   .btn__and__logo{
+      position: relative;
+      @include a.flex(center, space-between);
+      padding: 2.4rem;
+
+      @include a.breakpoint-up(medium) {
+         display: none;
+      }
+
+      .menu__btn{
+         background-image: url('../../assets/shared/icon-hamburger.svg');
+         background-position: center;
+         background-repeat: no-repeat;
+         width: 2.4rem;
+         aspect-ratio: 1;
+         z-index: 100;
+
+         &[aria-expanded="true"] {
+            background-image: url('../../assets/shared/icon-close.svg');
+         }
+      }
+
+      .logo{
+         aspect-ratio: 1;
+         width: 4rem;
+      }
+   }
+
+   .backdrop{
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      z-index: 98;
+   }
+
+   .nav__mobile{
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 10rem 0 2.4rem 3.2rem;
+      min-height: 100vh;
+      left: 30%;
+      backdrop-filter: blur(2rem);
+      background-color: a.$clr-mobile-nav;
+      z-index: 99;
+      transform: translateX(100%);
+      transition: a.$transition;
+
+      &.open{
+         transform: translateX(0);
+      }
+
+      .nav__item{
+         padding: .8rem 0;
+      }
+
+      .nav__link{
+         position: relative;
+         display: block;
+         line-height: 1.92rem;
+         text-transform: uppercase;
+         color: a.$clr-white;
+         padding: .8rem 0;
+         letter-spacing: a.$ls-2-7;
+
+         &[aria-current="page"] {
+            &::after{
+               @extend %link-after;
+               height: 100%;
+               background-color: a.$clr-white;
+            }
+         }
+
+         &::after{
+            @extend %link-after;
+            height: 0;
+            background-color: a.$clr-white-hover;
+         }
+
+         &:hover{
+            &::after{
+               height: 100%;
+            }
+         }
+
+         .nav__num{
+            display: inline-block;
+            font-weight: a.$fw-700;
+            min-width: 2.4rem;
+         }
+      }
+   }
+
+   .nav__desktop{
+      @include a.breakpoint-down(small) {
+         display: none;
+      }
+
+      @include a.flex(center, space-between);
+      min-height: 9.6rem;
+      padding: 0 4rem;
+      margin: 0 auto;
+
+      @include a.breakpoint-up(xlarge){
+         max-width: 128rem
+      }
+
+      .logo__link{
+         margin-right: 4rem;
+
+         @include a.breakpoint-up(xlarge){
+            position: absolute;
+            transform: translateX(-8rem);
+         }
+
+         .desktop__logo{
+            aspect-ratio: 1;
+            width: 4.8rem;
+         }
+      }
+
+      .nav__line{
+         flex-grow: 1;
+         position: relative;
+
+         &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            width: 100%;
+            background-color: transparent;
+            z-index: 91;
+
+            @include a.breakpoint-up(large){
+               background-color: a.$clr-white-hover;
+             }
+         }
+         
+      }
+
+      .nav__list{
+         @include a.flex(center, unset);
+         gap: 3.2rem;
+         align-self: stretch;
+         z-index: 90;
+         padding-left: 4rem;
+
+         &::after{
+            content: '';
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 65%;
+            max-width: 48rem;
+            background-color: a.$clr-desktop-nav;
+            backdrop-filter: blur(4rem);
+
+            @include a.breakpoint-up(large){
+               width: 50%;
+               min-width: 62rem;
+               max-width: 100%;
+            }
+         }
+
+         .nav__item{
+            align-self: stretch;
+            z-index: 80;
+         }
+
+         .nav__link{
+            position: relative;
+            color: a.$clr-white;
+            display: inline-block;
+            height: 100%;
+            padding: 1rem .4rem;
+            letter-spacing: a.$ls-2-7;
+            font-size: 1.4rem;
+            @include a.flex(center, center);
+
+            @include a.breakpoint-up(large){
+               font-size: 1.6rem;
+            }
+
+            &::before{
+               @extend %desktop-link-after;
+               width: 0;
+               background-color: a.$clr-white-hover;
+            }
+
+            &:hover{
+               &::before{
+                  width: 100%;
+               }
+            }
+
+            &[aria-current="page"] {
+               &::before{
+                  @extend %desktop-link-after;
+                  width: 100%;
+                  background-color: a.$clr-white;
+               }
+            }
+
+            .nav__num{
+               display: none;
+
+               @include a.breakpoint-up(large){
+                  display: inline-block;
+                  min-width: 1.6rem;
+                  margin-right: 1rem;
+                  font-weight: a.$fw-700;
+               }
+            }
+         }
+      }
+   }
+
+   
+}

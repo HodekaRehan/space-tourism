@@ -1,0 +1,15 @@
+@use '../abstracts' as a;
+
+.crew{
+   background-image: url('../../assets/crew/background-crew-mobile.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   @include a.breakpoint-up(medium){
+      background-image: url('../../assets/crew/background-crew-tablet.jpg');
+   }
+
+   @include a.breakpoint-up(large){
+      background-image: url('../../assets/crew/background-crew-desktop.jpg');
+   }
+}

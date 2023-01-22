@@ -1,0 +1,10 @@
+@mixin flex($align-items, $justify-content) {
+   display: flex;
+   align-items: $align-items;
+   justify-content: $justify-content;
+}
+
+@mixin background-opacity($color, $opacity) {
+   background-color: $color; //fallback
+   background-color: rgba($color, $opacity);
+}
