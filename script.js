@@ -26,6 +26,7 @@ links.forEach(link => {
       link.setAttribute('aria-current', 'page')
       link.addEventListener('click', closeMenu)
    }
+   link.addEventListener('click', closeMenu)
 })
 
 backdrop.addEventListener('click', closeMenu)
