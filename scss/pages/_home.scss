@@ -12,4 +12,142 @@
    @include a.breakpoint-up(large){
       background-image: url('../../assets/home/background-home-desktop.jpg');
    }
+
+   &__main{
+      @include a.flex(center, center);
+      position: relative;
+      gap: 8rem;
+      min-height: calc(100vh - 8.8rem);
+      flex-direction: column;
+      padding: 2.4rem 2.4rem 4.8rem 2.4rem;
+      text-align: center;
+      font-size: 1.6rem;
+
+      @include a.breakpoint-up(medium){
+         min-height: calc(100vh - 9.6rem);
+         gap: 15rem;
+         padding: 4rem;
+         margin: 0 auto;
+      }
+
+      @include a.breakpoint-up(large){
+         @include a.flex(center, space-between);
+         min-height: calc(100vh - 17.6rem);
+         flex-direction: row;
+         gap: 0;
+         padding: 0 4rem;
+         max-width: 128rem;
+         margin: 4rem auto 0 auto;
+         text-align: left;
+      }
+
+      // @include a.breakpoint-up(xlarge){
+      //    max-width: 128rem
+      // }
+   }
+
+   &__heading{
+      letter-spacing: a.$ls-2-7;
+      text-transform: uppercase;
+      font-family: a.$ff-barlow-condensed;
+
+      @include a.breakpoint-up(medium){
+         letter-spacing: a.$ls-3-38;
+         font-size: 2rem;
+      }
+
+      @include a.breakpoint-up(large){
+         letter-spacing: a.$ls-4-75;
+         font-size: 2.8rem;
+      }
+   }
+
+   &__space{
+      font-family: a.$ff-bellefair;
+      display: block;
+      font-size: 8rem;
+      line-height: 10rem;
+      margin: 1.6rem 0;
+      color: a.$clr-white;
+
+      @include a.breakpoint-up(medium){
+         font-size: 15rem;
+         line-height: 15rem;
+      }
+
+      @include a.breakpoint-up(large){
+         line-height: 17.2rem;
+      }
+   }
+
+   &__para{
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      max-width: 50rem;
+
+      @include a.breakpoint-up(medium){
+         font-size: 1.8rem;
+         line-height: 3.2rem;
+      }
+   }
+
+   &__explore-link{
+      position: relative;
+      font-family: a.$ff-bellefair;
+      color: a.$clr-black;
+      @include a.flex(center, center);
+      width: 15rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: a.$clr-white;
+      font-size: 2rem;
+      text-transform: uppercase;
+      scale: 1;
+      z-index: 1;
+
+      @include a.breakpoint-up(medium){
+         width: 24.2rem;
+         font-size: 3.2rem;
+         letter-spacing: a.$ls-2;
+      }
+
+      @include a.breakpoint-up(large){
+         width: 27.4rem;
+      }
+      
+      &::before{
+         content: '';
+         position: absolute;
+         border-radius: 50%;
+         width: 15rem;
+         aspect-ratio: 1;
+         scale: 1;
+         background-color: a.$clr-white-hover;
+         transition: a.$transition;
+         z-index: -1;
+
+         @include a.breakpoint-up(medium){
+            width: 24.2rem;
+         }
+
+         @include a.breakpoint-up(large){
+            width: 27.4rem;
+         }
+      }
+
+      &:hover{
+         &::before{
+            width: 16rem;
+            scale: 1.5;
+
+            @include a.breakpoint-up(medium){
+               width: 26.2rem;
+            }
+
+            @include a.breakpoint-up(large){
+               width: 27.4rem;
+            }
+         }
+      }
+   }
 }

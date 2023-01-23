@@ -102,9 +102,10 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Barlow Condensed", sans-serif;
-  overflow-x: hidden;
+  font-family: "Barlow", sans-serif;
+  overflow: hidden;
   background-color: #0b0d17;
+  color: #d0d6f9;
 }
 
 a {
@@ -159,6 +160,9 @@ a {
   }
 }
 
+header {
+  font-family: "Barlow Condensed", sans-serif;
+}
 @media (min-width: 48em) {
   header {
     position: relative;
@@ -166,7 +170,7 @@ a {
 }
 @media (min-width: 64em) {
   header {
-    top: 4rem;
+    margin-top: 4rem;
   }
 }
 header .btn__and__logo {
@@ -200,17 +204,17 @@ header .backdrop {
   position: absolute;
   left: 0;
   top: 0;
-  min-width: 100vw;
-  min-height: 100vh;
+  right: 0;
+  bottom: 0;
   z-index: 98;
 }
 header .nav__mobile {
   position: absolute;
   right: 0;
   top: 0;
+  left: 30%;
   padding: 10rem 0 2.4rem 3.2rem;
   min-height: 100vh;
-  left: 30%;
   -webkit-backdrop-filter: blur(2rem);
           backdrop-filter: blur(2rem);
   background-color: rgba(255, 255, 255, 0.25);
@@ -393,6 +397,150 @@ header .nav__desktop .nav__list .nav__link .nav__num {
 @media (min-width: 64em) {
   .home {
     background-image: url("../../assets/home/background-home-desktop.jpg");
+  }
+}
+.home__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 8rem;
+  min-height: calc(100vh - 8.8rem);
+  flex-direction: column;
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+@media (min-width: 48em) {
+  .home__main {
+    min-height: calc(100vh - 9.6rem);
+    gap: 15rem;
+    padding: 4rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 64em) {
+  .home__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 17.6rem);
+    flex-direction: row;
+    gap: 0;
+    padding: 0 4rem;
+    max-width: 128rem;
+    margin: 4rem auto 0 auto;
+    text-align: left;
+  }
+}
+.home__heading {
+  letter-spacing: 0.27rem;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+}
+@media (min-width: 48em) {
+  .home__heading {
+    letter-spacing: 0.338rem;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__heading {
+    letter-spacing: 0.475rem;
+    font-size: 2.8rem;
+  }
+}
+.home__space {
+  font-family: "Bellefair", serif;
+  display: block;
+  font-size: 8rem;
+  line-height: 10rem;
+  margin: 1.6rem 0;
+  color: #ffffff;
+}
+@media (min-width: 48em) {
+  .home__space {
+    font-size: 15rem;
+    line-height: 15rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__space {
+    line-height: 17.2rem;
+  }
+}
+.home__para {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  max-width: 50rem;
+}
+@media (min-width: 48em) {
+  .home__para {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+  }
+}
+.home__explore-link {
+  position: relative;
+  font-family: "Bellefair", serif;
+  color: #0b0d17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  scale: 1;
+  z-index: 1;
+}
+@media (min-width: 48em) {
+  .home__explore-link {
+    width: 24.2rem;
+    font-size: 3.2rem;
+    letter-spacing: 0.2rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__explore-link {
+    width: 27.4rem;
+  }
+}
+.home__explore-link::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 15rem;
+  aspect-ratio: 1;
+  scale: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+@media (min-width: 48em) {
+  .home__explore-link::before {
+    width: 24.2rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__explore-link::before {
+    width: 27.4rem;
+  }
+}
+.home__explore-link:hover::before {
+  width: 16rem;
+  scale: 1.5;
+}
+@media (min-width: 48em) {
+  .home__explore-link:hover::before {
+    width: 26.2rem;
+  }
+}
+@media (min-width: 64em) {
+  .home__explore-link:hover::before {
+    width: 27.4rem;
   }
 }
 

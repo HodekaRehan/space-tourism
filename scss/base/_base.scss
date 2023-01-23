@@ -8,9 +8,10 @@ html{
 
 body{
    font-size: 1.6rem;
-   font-family: a.$ff-barlow-condensed;
-   overflow-x: hidden;
+   font-family: a.$ff-barlow;
+   overflow: hidden;
    background-color: a.$clr-black;
+   color: a.$clr-light-gray;
 }
 
 a{
