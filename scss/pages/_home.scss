@@ -17,7 +17,7 @@
       @include a.flex(center, center);
       position: relative;
       gap: 8rem;
-      min-height: calc(100vh - 8.8rem);
+      min-height: calc(100vh - 9rem);
       flex-direction: column;
       padding: 2.4rem 2.4rem 4.8rem 2.4rem;
       text-align: center;
@@ -33,11 +33,11 @@
       @include a.breakpoint-up(large){
          @include a.flex(center, space-between);
          min-height: calc(100vh - 17.6rem);
+         max-width: 100%;
          flex-direction: row;
          gap: 0;
          padding: 0 4rem;
          max-width: 128rem;
-         margin: 4rem auto 0 auto;
          text-align: left;
       }
 

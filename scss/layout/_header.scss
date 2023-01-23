@@ -8,7 +8,7 @@ header{
    }
 
    @include a.breakpoint-up(large){
-      margin-top: 4rem;
+      margin: 4rem 0;
    }
 
    .btn__and__logo{
@@ -49,7 +49,7 @@ header{
    }
 
    .nav__mobile{
-      position: absolute;
+      position: fixed;
       right: 0;
       top: 0;
       left: 30%;
