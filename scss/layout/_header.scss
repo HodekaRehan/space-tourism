@@ -8,7 +8,8 @@ header{
    }
 
    @include a.breakpoint-up(large){
-      margin: 4rem 0;
+      height: 17.6rem;
+      padding: 4rem 0;
    }
 
    .btn__and__logo{
@@ -166,11 +167,15 @@ header{
             content: '';
             position: absolute;
             right: 0;
-            height: 100%;
+            height: 9.6rem;
             width: 65%;
             max-width: 48rem;
             background-color: a.$clr-desktop-nav;
             backdrop-filter: blur(4rem);
+
+            @include a.breakpoint-up(large){
+               top: 4rem;
+            }
 
             @include a.breakpoint-up(large){
                width: 50%;
