@@ -12,9 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@300;400;500;700&family=Bellefair&display=swap" rel="stylesheet">
   
   <title>Destination</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
   <link rel="stylesheet" href="css/main.css">
-
   
 </head>
 <body class="destination">
@@ -90,7 +91,37 @@
     <!-- desktop- nav start -->
   </header>
 
-  
+  <main class="destination__main">
+    <h2 class="section-heading"><span>01</span> Pick your destination</h2>
+
+    <section>
+
+      <div class="swiper mySwiper imageSwiper">
+        <div class="swiper-wrapper ">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper mySwiper infoSwiper">
+        <div class="swiper-wrapper ">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+

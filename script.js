@@ -30,3 +30,36 @@ links.forEach(link => {
 })
 
 backdrop.addEventListener('click', closeMenu)
+
+
+//destination slider start
+const destinationSlides = ['moon', 'mars', 'europa', 'titan']
+
+var imgSwiper = new Swiper(".imageSwiper", {
+   slidesPerView: 1,
+   spaceBetween: 30,
+   loop: false,
+ });
+
+ var infoSwiper = new Swiper(".infoSwiper", {
+   slidesPerView: 1,
+   spaceBetween: 30,
+   loop: false,
+   pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+         return '<span class="' + className + '">' + (destinationSlides[index]) + '</span>';
+      },
+   },
+   
+ });
+
+ infoSwiper.controller.control = this.imgSwiper
+ imgSwiper.controller.control = this.infoSwiper
+
+ //destination slider end
+ 
+
+
+
