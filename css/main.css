@@ -535,7 +535,8 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   .destination__para {
     font-size: 1.8rem;
     line-height: 3.2rem;
-    max-width: 100%;
+    max-width: 45rem;
+    margin: 0;
   }
 }
 .destination__distance--container {
@@ -587,8 +588,8 @@ header .nav__desktop .nav__list .nav__link .nav__num {
 }
 @media (min-width: 64em) {
   .destination__hr {
-    margin: 5.4rem auto 3rem auto;
-    max-width: 100%;
+    margin: 5.4rem 0 3rem 0;
+    max-width: 45rem;
   }
 }
 
@@ -781,6 +782,11 @@ header .nav__desktop .nav__list .nav__link .nav__num {
 @media (min-width: 64em) {
   .destination {
     gap: 6rem;
+  }
+}
+@media (min-width: 90em) {
+  .destination {
+    gap: 8rem;
   }
 }
 .destination .page__heading {

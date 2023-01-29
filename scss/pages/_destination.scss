@@ -24,8 +24,11 @@
    }
 
    @include a.breakpoint-up(large){
-      // @include a.flex(stretch, center);
       gap: 6rem;
+   }
+
+   @include a.breakpoint-up(xlarge){
+      gap: 8rem;
    }
 
    .page__heading{
