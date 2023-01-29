@@ -425,8 +425,15 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30rem;
+  max-width: 100%;
+  width: 18rem;
   margin: 3.2rem 7rem 2.6rem 7rem;
+}
+@media (min-width: 48em) {
+  .destination__single--tab > picture {
+    width: 30rem;
+    margin: 3.2rem 7rem 2.6rem 7rem;
+  }
 }
 @media (min-width: 64em) {
   .destination__single--tab > picture {

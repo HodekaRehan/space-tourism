@@ -19,15 +19,19 @@
          gap: 5rem
       }
 
-
-      > picture{
+      > picture {
          @include a.flex(center, center);
-         width: 30rem;
+         max-width: 100%;
+         width: 18rem;
          margin: 3.2rem 7rem 2.6rem 7rem;
+         
+         @include a.breakpoint-up(medium) {
+            width: 30rem;
+            margin: 3.2rem 7rem 2.6rem 7rem;
+         }
 
          @include a.breakpoint-up(large) {
             width: 50%;
-            // max-width: 45rem;
             margin: 0;
          }
       }
