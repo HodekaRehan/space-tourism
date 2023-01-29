@@ -1,0 +1,190 @@
+@use '../abstracts' as a;
+
+
+.destination{
+   &__tabs--section{
+      @include a.flex(center, center);
+      height: 100%;
+
+   }
+
+   &__single--tab {
+      @include a.flex(center, center);
+      flex-direction: column;
+      max-width: 100%;
+      width: 100%;
+
+      @include a.breakpoint-up(large) {
+         flex-direction: row;
+         gap: 5rem
+      }
+
+
+      > picture{
+         @include a.flex(center, center);
+         width: 30rem;
+         margin: 3.2rem 7rem 2.6rem 7rem;
+
+         @include a.breakpoint-up(large) {
+            width: 50%;
+            // max-width: 45rem;
+            margin: 0;
+         }
+      }
+   }
+
+   &__info--container{
+      text-align: center;
+      
+      @include a.breakpoint-up(large) {
+         width: 50%;
+         text-align: left;
+      }
+   }
+
+   &__btns--container{
+      @include a.flex(center, center);
+      gap: 2.4rem;
+
+      @include a.breakpoint-up(medium) {
+         gap: 3.2rem;
+      }
+
+      @include a.breakpoint-up(large) {
+         @include a.flex(center, flex-start);
+      }
+   }
+
+   &__btn{
+      position: relative;
+      background-color: transparent;
+      border: 0;
+      text-transform: uppercase;
+      color: a.$clr-light-gray;
+      font-family: a.$ff-barlow-condensed;
+      letter-spacing: a.$ls-2-35;
+      font-size: 1.4rem;
+      padding: .2rem .2rem 1rem .2rem;
+
+      @include a.breakpoint-up(medium) {
+         font-size: 1.6rem;
+      }
+      
+
+      &::after{
+         position: absolute;
+         left: -.1rem;
+         bottom: .2rem;
+         content: '';
+         background-color: transparent;
+         width: 0;
+         height: .3rem;
+         transition: a.$transition;
+      }
+
+      &:hover{
+         &::after{
+            background-color: a.$clr-light-gray;
+            width: 100%;
+         }
+      }
+
+      &--active{
+         color: a.$clr-white;
+
+         &::after{
+            background-color: a.$clr-white;
+            width: 100%;
+         }
+         
+      }
+   }
+
+   &__title{
+      font-size: 5.6rem;
+      font-family: a.$ff-bellefair;
+      text-transform: uppercase;
+      line-height: 6.5rem;
+      margin: 2rem 0 .4rem 0 ;
+
+      @include a.breakpoint-up(medium) {
+         font-size: 8rem;
+         line-height: 9.2rem;
+         margin: 3.2rem 0 .8rem 0 ;
+      }
+
+      @include a.breakpoint-up(large) {
+         font-size: 10rem;
+         line-height: 11.5rem;
+         margin: 3.6rem 0 1.4rem 0 ;
+      }
+   }
+
+   &__para{
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      max-width: 57.5rem;
+      margin: 0 auto;
+
+      @include a.breakpoint-up(medium) {
+         font-size: 1.6rem;
+         line-height: 2.8rem;
+      }
+
+      @include a.breakpoint-up(large) {
+         font-size: 1.8rem;
+         line-height: 3.2rem;
+         max-width: 100%;
+      }
+   }
+
+   &__distance--container{
+      @include a.flex(center, center);
+      flex-direction: column;
+      gap: 3.2rem;
+
+      @include a.breakpoint-up(medium) {
+         flex-direction: row;
+         gap: 10rem;
+      }
+
+      @include a.breakpoint-up(large) {
+         @include a.flex(center, flex-start);
+      }
+   }
+
+   &__distance--heading{
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-family: a.$ff-barlow-condensed;
+      letter-spacing: a.$ls-2-35;
+      margin-bottom: 1.2rem;
+   }
+
+   &__distance--km--time{
+      font-size: 2.8rem;
+      line-height: 3.2rem;
+      color: a.$clr-white;
+      font-family: a.$ff-bellefair;
+      text-transform: uppercase;
+   }
+
+   &__hr{
+      border-color: rgba( a.$clr-light-gray, .25) transparent transparent transparent;
+      border-width: .1rem 0 0 0;
+      border-style: solid none none none;
+      margin: 3.2rem auto;
+      max-width: 57.5rem;
+
+      @include a.breakpoint-up(medium) {
+         margin: 5rem auto 3rem auto;
+         max-width: 57.5rem;
+      }
+
+      @include a.breakpoint-up(large) {
+         margin: 5.4rem auto 3rem auto;
+         max-width: 100%;
+      }
+
+   }
+}

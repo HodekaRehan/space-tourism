@@ -401,41 +401,195 @@ header .nav__desktop .nav__list .nav__link .nav__num {
    The 'layout' folder should contain everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
 
 */
-.swiper-slide {
-  min-height: 300px;
+.destination__tabs--section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-
-.swiper-pagination {
-  position: static;
-  bottom: 0;
-  width: auto;
+.destination__single--tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+}
+@media (min-width: 64em) {
+  .destination__single--tab {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+.destination__single--tab > picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+  margin: 3.2rem 7rem 2.6rem 7rem;
+}
+@media (min-width: 64em) {
+  .destination__single--tab > picture {
+    width: 50%;
+    margin: 0;
+  }
+}
+.destination__info--container {
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .destination__info--container {
+    width: 50%;
+    text-align: left;
+  }
+}
+.destination__btns--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+@media (min-width: 48em) {
+  .destination__btns--container {
+    gap: 3.2rem;
+  }
+}
+@media (min-width: 64em) {
+  .destination__btns--container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.destination__btn {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  text-transform: uppercase;
+  color: #d0d6f9;
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 0.235rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 1.6rem;
-}
-.swiper-pagination .swiper-pagination-bullet {
-  color: #d0d6f9;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  background-color: transparent;
-  text-transform: uppercase;
-  opacity: 1;
   font-size: 1.4rem;
-  border-radius: 0;
-  border-bottom: 0.3rem solid transparent;
-  padding: 0.8rem 0.3rem;
+  padding: 0.2rem 0.2rem 1rem 0.2rem;
 }
-.swiper-pagination .swiper-pagination-bullet-active {
+@media (min-width: 48em) {
+  .destination__btn {
+    font-size: 1.6rem;
+  }
+}
+.destination__btn::after {
+  position: absolute;
+  left: -0.1rem;
+  bottom: 0.2rem;
+  content: "";
   background-color: transparent;
+  width: 0;
+  height: 0.3rem;
+  transition: all 0.3s ease-in-out;
+}
+.destination__btn:hover::after {
+  background-color: #d0d6f9;
+  width: 100%;
+}
+.destination__btn--active {
   color: #ffffff;
-  border-bottom: 0.3rem solid #ffffff;
+}
+.destination__btn--active::after {
+  background-color: #ffffff;
+  width: 100%;
+}
+.destination__title {
+  font-size: 5.6rem;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  line-height: 6.5rem;
+  margin: 2rem 0 0.4rem 0;
+}
+@media (min-width: 48em) {
+  .destination__title {
+    font-size: 8rem;
+    line-height: 9.2rem;
+    margin: 3.2rem 0 0.8rem 0;
+  }
+}
+@media (min-width: 64em) {
+  .destination__title {
+    font-size: 10rem;
+    line-height: 11.5rem;
+    margin: 3.6rem 0 1.4rem 0;
+  }
+}
+.destination__para {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  max-width: 57.5rem;
+  margin: 0 auto;
+}
+@media (min-width: 48em) {
+  .destination__para {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+}
+@media (min-width: 64em) {
+  .destination__para {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    max-width: 100%;
+  }
+}
+.destination__distance--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+@media (min-width: 48em) {
+  .destination__distance--container {
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+@media (min-width: 64em) {
+  .destination__distance--container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.destination__distance--heading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.235rem;
+  margin-bottom: 1.2rem;
+}
+.destination__distance--km--time {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  color: #ffffff;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+}
+.destination__hr {
+  border-color: rgba(208, 214, 249, 0.25) transparent transparent transparent;
+  border-width: 0.1rem 0 0 0;
+  border-style: solid none none none;
+  margin: 3.2rem auto;
+  max-width: 57.5rem;
+}
+@media (min-width: 48em) {
+  .destination__hr {
+    margin: 5rem auto 3rem auto;
+    max-width: 57.5rem;
+  }
+}
+@media (min-width: 64em) {
+  .destination__hr {
+    margin: 5.4rem auto 3rem auto;
+    max-width: 100%;
+  }
 }
 
 /*  
@@ -594,23 +748,42 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   }
 }
 
-.destination {
+.destination__body {
   background-image: url("../../assets/destination/background-destination-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media (min-width: 48em) {
-  .destination {
+  .destination__body {
     background-image: url("../../assets/destination/background-destination-tablet.jpg");
   }
 }
 @media (min-width: 64em) {
-  .destination {
+  .destination__body {
     background-image: url("../../assets/destination/background-destination-desktop.jpg");
   }
 }
 
-.destination__main .section-heading {
+.destination {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 48em) {
+  .destination {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 3rem;
+  }
+}
+@media (min-width: 64em) {
+  .destination {
+    gap: 6rem;
+  }
+}
+.destination .page__heading {
   text-align: center;
   text-transform: uppercase;
   font-family: "Barlow Condensed", sans-serif;
@@ -619,19 +792,19 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   color: #ffffff;
 }
 @media (min-width: 48em) {
-  .destination__main .section-heading {
+  .destination .page__heading {
     font-size: 2rem;
     text-align: left;
     letter-spacing: 0.338rem;
   }
 }
 @media (min-width: 64em) {
-  .destination__main .section-heading {
+  .destination .page__heading {
     font-size: 2.8rem;
     letter-spacing: 0.475rem;
   }
 }
-.destination__main .section-heading span {
+.destination .page__heading span {
   color: rgba(255, 255, 255, 0.25);
   margin-right: 1.6rem;
   font-weight: 700;

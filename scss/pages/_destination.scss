@@ -1,6 +1,6 @@
 @use '../abstracts' as a;
 
-.destination{
+.destination__body{
    background-image: url('../../assets/destination/background-destination-mobile.jpg');
    background-repeat: no-repeat;
    background-size: cover;
@@ -14,8 +14,21 @@
    }
 }
 
-.destination__main{
-   .section-heading{
+.destination{
+   @include a.flex(stretch, center);
+   flex-direction: column;
+
+   @include a.breakpoint-up(medium){
+      @include a.flex(stretch, start);
+      gap: 3rem;
+   }
+
+   @include a.breakpoint-up(large){
+      // @include a.flex(stretch, center);
+      gap: 6rem;
+   }
+
+   .page__heading{
       text-align: center;
       text-transform: uppercase;
       font-family: a.$ff-barlow-condensed;
@@ -32,12 +45,14 @@
       @include a.breakpoint-up(large) {
          font-size: 2.8rem;
          letter-spacing: a.$ls-4-75;
+         
       }
 
       span{
          color: a.$clr-mobile-nav;
          margin-right: 1.6rem;
          font-weight: a.$fw-700;
+         
       }
    }
 }

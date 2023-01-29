@@ -13,12 +13,10 @@
   
   <title>Destination</title>
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-
   <link rel="stylesheet" href="css/main.css">
   
 </head>
-<body class="destination">
+<body class="destination__body">
 
   <header>
 
@@ -91,37 +89,62 @@
     <!-- desktop- nav start -->
   </header>
 
-  <main class="destination__main">
-    <h2 class="section-heading"><span>01</span> Pick your destination</h2>
+  <main class="destination">
+    <h2 class="page__heading"><span>01</span> Pick your destination</h2>
 
-    <section>
+    <section class="destination__tabs--section">
 
-      <div class="swiper mySwiper imageSwiper">
-        <div class="swiper-wrapper ">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-        </div>
-      </div>
+      <article class="destination__single--tab">
 
-      <div class="swiper-pagination"></div>
+        <picture>
+          <source srcset="./assets/destination/image-moon.webp" type="image/webp">
+          <img src="./assets/destination/image-moon.png" alt="the moon">
+        </picture>
 
-      <div class="swiper mySwiper infoSwiper">
-        <div class="swiper-wrapper ">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-        </div>
-      </div>
+        <section class="destination__info--container">
+
+          <div class="destination__btns--container">
+            <button class="destination__btn destination__btn--active">Moon</button>
+            <button class="destination__btn">Mars</button>
+            <button class="destination__btn">Europa</button>
+            <button class="destination__btn">Titan</button>
+          </div>
+
+          <div class="destination__text--container">
+            <h2 class="destination__title">Moon</h2>
+
+            <p class="destination__para">
+              See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+            </p>
+
+            <hr class="destination__hr">
+
+            <div class="destination__distance--container">
+
+              <div class="destination__distance--wrapper">
+                <h3 class="destination__distance--heading">AVG. DISTANCE</h3>
+                <p class="destination__distance--km--time">384,400 km</p>
+              </div>
+
+              <div class="destination__distance--wrapper">
+                <h3 class="destination__distance--heading">Est. travel time</h3>
+                <p class="destination__distance--km--time">3 days</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+  
+      </article>
 
     </section>
+   
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
 
