@@ -1,8 +1,6 @@
-import get from "../getElement.js";
-
-const menuBtn = get(".menu__btn");
-const mobileMenu = get(".nav__mobile");
-const backdrop = get(".backdrop");
+const menuBtn = document.querySelector(".menu__btn");
+const mobileMenu = document.querySelector(".nav__mobile");
+const backdrop = document.querySelector(".backdrop");
 
 const closeMenu = function () {
   mobileMenu.classList.remove("open");

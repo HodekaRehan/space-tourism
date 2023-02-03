@@ -1,11 +1,9 @@
-import get from "../getElement.js"
-
-const sourceImage = get('.sourceImg')
-const img = get('.image')
-const title = get('.destination__title')
-const para = get('.destination__para')
-const distance = get('.avg--distance')
-const travelTime = get('.travel--time')
+const sourceImage = document.querySelector('.sourceImg')
+const img = document.querySelector('.image')
+const title = document.querySelector('.destination__title')
+const para = document.querySelector('.destination__para')
+const distance = document.querySelector('.avg--distance')
+const travelTime = document.querySelector('.travel--time')
 const destinationBtns = [...document.querySelectorAll('.destination__btn')]
 
 const displayDestinations = function(destination) {
