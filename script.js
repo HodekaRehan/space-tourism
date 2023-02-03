@@ -1,4 +1,5 @@
 import {closeMenu} from './utils/navigation/toggleNav.js'
+import fetchData from './utils/fetchData.js';
 
 const links = document.querySelectorAll(".nav__link");
 
@@ -9,5 +10,13 @@ links.forEach((link) => {
   }
   link.addEventListener("click", closeMenu);
 });
+
+const start = async function() {
+  const data = await fetchData()
+  console.log(data);
+}
+
+start()
+
 
 
