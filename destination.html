@@ -97,17 +97,17 @@
       <article class="destination__single--tab">
 
         <picture>
-          <source srcset="./assets/destination/image-moon.webp" type="image/webp">
-          <img src="./assets/destination/image-moon.png" alt="the moon">
+          <source srcset="./assets/destination/image-moon.webp" type="image/webp" class="sourceImg">
+          <img src="./assets/destination/image-moon.png" alt="the moon" class="image">
         </picture>
 
         <section class="destination__info--container">
 
           <div class="destination__btns--container">
-            <button class="destination__btn destination__btn--active">Moon</button>
-            <button class="destination__btn">Mars</button>
-            <button class="destination__btn">Europa</button>
-            <button class="destination__btn">Titan</button>
+            <button class="destination__btn destination__btn--active" data-id="0">Moon</button>
+            <button class="destination__btn" data-id="1">Mars</button>
+            <button class="destination__btn" data-id="2">Europa</button>
+            <button class="destination__btn" data-id="3">Titan</button>
           </div>
 
           <div class="destination__text--container">
@@ -123,12 +123,12 @@
 
               <div class="destination__distance--wrapper">
                 <h3 class="destination__distance--heading">AVG. DISTANCE</h3>
-                <p class="destination__distance--km--time">384,400 km</p>
+                <p class="destination__distance--km--time avg--distance">384,400 km</p>
               </div>
 
               <div class="destination__distance--wrapper">
                 <h3 class="destination__distance--heading">Est. travel time</h3>
-                <p class="destination__distance--km--time">3 days</p>
+                <p class="destination__distance--km--time travel--time">3 days</p>
               </div>
 
             </div>

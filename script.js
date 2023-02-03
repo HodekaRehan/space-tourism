@@ -1,5 +1,6 @@
 import {closeMenu} from './utils/navigation/toggleNav.js'
 import fetchData from './utils/fetchData.js';
+import displayDestinations from './utils/destination/displayDestinations.js';
 
 const links = document.querySelectorAll(".nav__link");
 
@@ -13,10 +14,8 @@ links.forEach((link) => {
 
 const start = async function() {
   const data = await fetchData()
-  console.log(data);
+  displayDestinations(data.destinations)
 }
 
 start()
-
-
 
