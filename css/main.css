@@ -108,26 +108,6 @@ a {
   text-decoration: none;
 }
 
-main {
-  min-height: calc(100vh - 9rem);
-  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
-}
-@media (min-width: 48em) {
-  main {
-    min-height: calc(100vh - 9.6rem);
-    padding: 4rem;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 64em) {
-  main {
-    min-height: calc(100vh - 17.6rem);
-    padding: 2.4rem 4rem;
-    max-width: 128rem;
-    width: 100%;
-  }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -629,10 +609,15 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   flex-direction: column;
   text-align: center;
   font-size: 1.6rem;
+  min-height: calc(100vh - 9rem);
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
 }
 @media (min-width: 48em) {
   .home__main {
     gap: 15rem;
+    min-height: calc(100vh - 9.6rem);
+    padding: 4rem;
+    margin: 0 auto;
   }
 }
 @media (min-width: 64em) {
@@ -643,6 +628,10 @@ header .nav__desktop .nav__list .nav__link .nav__num {
     flex-direction: row;
     gap: 0;
     text-align: left;
+    width: 100%;
+    min-height: calc(100vh - 17.6rem);
+    padding: 2.4rem 4rem;
+    max-width: 128rem;
   }
 }
 .home__heading {
@@ -777,6 +766,8 @@ header .nav__desktop .nav__list .nav__link .nav__num {
   align-items: stretch;
   justify-content: center;
   flex-direction: column;
+  min-height: calc(100vh - 9rem);
+  padding: 2.4rem 2.4rem 4.8rem 2.4rem;
 }
 @media (min-width: 48em) {
   .destination {
@@ -784,11 +775,18 @@ header .nav__desktop .nav__list .nav__link .nav__num {
     align-items: stretch;
     justify-content: start;
     gap: 3rem;
+    min-height: calc(100vh - 9.6rem);
+    padding: 4rem;
+    margin: 0 auto;
   }
 }
 @media (min-width: 64em) {
   .destination {
     gap: 6rem;
+    min-height: calc(100vh - 17.6rem);
+    padding: 2.4rem 4rem 5rem 4rem;
+    max-width: 128rem;
+    width: 100%;
   }
 }
 @media (min-width: 90em) {

@@ -18,23 +18,7 @@ a{
    text-decoration: none;
 }
 
-main{
-   min-height: calc(100vh - 9rem);
-   padding: 2.4rem 2.4rem 4.8rem 2.4rem;
 
-   @include a.breakpoint-up(medium){
-      min-height: calc(100vh - 9.6rem);
-      padding: 4rem;
-      margin: 0 auto;
-   }
-
-   @include a.breakpoint-up(large){
-      min-height: calc(100vh - 17.6rem);
-      padding: 2.4rem 4rem;
-      max-width: 128rem;
-      width: 100%;
-   }
-}
 
 
 
