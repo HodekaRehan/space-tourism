@@ -1,6 +1,6 @@
 @use '../abstracts' as a;
 
-.crew{
+.crew__body{
    background-image: url('../../assets/crew/background-crew-mobile.jpg');
    background-repeat: no-repeat;
    background-size: cover;
@@ -13,3 +13,84 @@
       background-image: url('../../assets/crew/background-crew-desktop.jpg');
    }
 }
+
+.crew{
+   @include a.flex(stretch, center);
+   flex-direction: column;
+   min-height: calc(100vh - 9rem);
+   padding: 0 2.4rem 4.8rem 2.4rem;
+
+   // @include a.breakpoint-up(medium){
+   //    @include a.flex(stretch, start);
+   //    gap: 3rem;
+   //    min-height: calc(100vh - 9.6rem);
+   //    padding: 4rem;
+   //    margin: 0 auto;
+   // }
+
+   // @include a.breakpoint-up(large){
+   //    gap: 6rem;
+   //    min-height: calc(100vh - 17.6rem);
+   //    padding: 2.4rem 4rem 5rem 4rem;
+   //    max-width: 128rem;
+   //    width: 100%;
+   // }
+
+   // @include a.breakpoint-up(xlarge){
+   //    gap: 8rem;
+   // }
+
+   &__single--slide{
+      picture{
+         padding: 3.2rem 7.5rem 0 7.5rem;
+         border-bottom: 1px solid rgba( a.$clr-light-gray, .5);
+      }
+   }
+
+   &__btns--container{
+      @include a.flex(center, space-between);
+      width: 9rem;
+      padding: 3.2rem 0;
+      margin: 0 auto;
+   }
+
+   &__btn{
+      border-radius: 50%;
+      height: 1rem;
+      width: 1rem;
+      border: 0;
+      cursor: pointer;
+      background-color : rgba( a.$clr-light-gray, .25);
+
+      &--active{
+         background-color: a.$clr-white;
+      }
+   }
+
+   &__text--container{
+      text-align: center;
+
+      .crew__role{
+         text-transform: uppercase;
+         font-family: a.$ff-bellefair;
+         font-size: clamp(1.6rem, 4vw, 3.2rem);
+         color: rgba( a.$clr-white, .5);
+         line-height: 1.2;
+      }
+
+      .crew__name{
+         text-transform: uppercase;
+         color: a.$clr-white;
+         font-size: clamp(2.4rem , 4vw, 5.6rem);
+         font-family: a.$ff-bellefair;
+         line-height: 1.2;
+         margin: .8rem 0 1.6rem 0;
+      }
+
+      .crew__para{
+         font-size: clamp(1.5rem, 3vw, 1.8rem);
+      }
+   }
+   
+}
+
