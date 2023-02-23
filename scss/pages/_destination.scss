@@ -21,7 +21,7 @@
    padding: 2.4rem 2.4rem 4.8rem 2.4rem;
 
    @include a.breakpoint-up(medium){
-      @include a.flex(stretch, start);
+      @include a.flex(stretch, flex-start);
       gap: 3rem;
       min-height: calc(100vh - 9.6rem);
       padding: 4rem;
